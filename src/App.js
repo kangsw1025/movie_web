@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+
+function Food(props) {
+  return <h1>I like {props.food}</h1>;
+}
+
+const foodIlike = [
+  { id: 1, name: "kimchi" },
+  { id: 2, name: "kimbab" },
+  { id: 3, name: "ramen" },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Hello</h1>
+      {foodIlike.map((dish) => (
+        <Food key={dish.id} food={dish.name} />
+      ))}
     </div>
   );
 }
